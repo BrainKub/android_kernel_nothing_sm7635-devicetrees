@@ -17,10 +17,6 @@ PINEAPPLE_BASE_DTB += pineapple.dtb pineapple-v2.dtb
 PINEAPPLE_APQ_BASE_DTB += pineapplep.dtb pineapplep-v2.dtb
 
 PINEAPPLE_BOARDS += \
-		 pineapple-mtp-overlay.dtbo \
-		 pineapple-mtp-nfc-overlay.dtbo \
-		 pineapple-cdp-overlay.dtbo \
-		 pineapple-cdp-nfc-overlay.dtbo \
 		 pineapple-qrd-overlay.dtbo \
 		 pineapple-qrd-sku2-overlay.dtbo \
 		 pineapple-rcm-overlay.dtbo \
@@ -64,13 +60,13 @@ pineapple-overlays-dtb-$(CONFIG_ARCH_CLIFFS) += $(CLIFFS_BOARDS) $(NOAPQ_CLIFFS_
 
 VOLCANO_BASE_DTB += volcano.dtb
 
-NOAPQ_VOLCANO_BOARDS += \
-		volcano-rumi-overlay.dtbo
+VOLCANO_BOARDS += \
+		volcano-qrd-overlay.dtbo \
+		volcano-qrd-pro-overlay.dtbo
 
 pineapple-dtb-$(CONFIG_ARCH_VOLCANO) += \
-	$(call add-overlays, $(NOAPQ_VOLCANO_BOARDS),$(VOLCANO_BASE_DTB))
-pineapple-overlays-dtb-$(CONFIG_ARCH_VOLCANO) += $(NOAPQ_VOLCANO_BOARDS) $(VOLCANO_BASE_DTB)
-
+	$(call add-overlays, $(VOLCANO_BOARDS),$(VOLCANO_BASE_DTB))
+pineapple-overlays-dtb-$(CONFIG_ARCH_VOLCANO) += $(VOLCANO_BOARDS) $(VOLCANO_BASE_DTB)
 dtb-y += $(pineapple-dtb-y)
 
 KALAMA_BASE_DTB += kalama.dtb kalama-v2.dtb

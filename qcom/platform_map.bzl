@@ -161,10 +161,10 @@ _platform_map = {
         ],
         "dtbo_list": [
             {"name": "pineapple-atp-overlay.dtbo"},
-            {"name": "pineapple-cdp-nfc-overlay.dtbo"},
-            {"name": "pineapple-cdp-overlay.dtbo"},
-            {"name": "pineapple-mtp-nfc-overlay.dtbo"},
-            {"name": "pineapple-mtp-overlay.dtbo"},
+#            {"name": "pineapple-cdp-nfc-overlay.dtbo"},
+#            {"name": "pineapple-cdp-overlay.dtbo"},
+#            {"name": "pineapple-mtp-nfc-overlay.dtbo"},
+#            {"name": "pineapple-mtp-overlay.dtbo"},
             {"name": "pineapple-qrd-overlay.dtbo"},
             {"name": "pineapple-qrd-sku2-overlay.dtbo"},
             {"name": "pineapple-rcm-overlay.dtbo"},
@@ -235,7 +235,7 @@ _platform_map = {
             {"name": "pineapple-vm-rumi.dtb"},
             {"name": "pineapplep-vm-hdk.dtb"},
         ],
-        "binary_compatible_with": ["cliffs-tuivm"],
+        "binary_compatible_with": ["cliffs-tuivm", "volcano-tuivm"],
     },
     "pineapple-oemvm": {
         "dtb_list": [
@@ -252,7 +252,7 @@ _platform_map = {
             {"name": "pineapple-vm-rumi.dtb"},
             {"name": "pineapplep-vm-hdk.dtb"},
         ],
-        "binary_compatible_with": ["cliffs-oemvm"],
+        "binary_compatible_with": ["cliffs-oemvm", "volcano-oemvm"],
     },
     "cliffs-tuivm": {
         "dtb_list": [
@@ -360,17 +360,15 @@ _platform_map = {
             },
         ],
     },
-    "volcano": {
-        "dtb_list": [
-            {"name": "volcano.dtb"},
-        ],
-        "dtbo_list": [
-            {
-                "name": "volcano-rumi-overlay.dtbo",
-                "apq": False,
-            },
-        ],
-    },
+     "volcano": {
+         "dtb_list": [
+             {"name": "volcano.dtb"},
+         ],
+         "dtbo_list": [
+            {"name": "volcano-qrd-overlay.dtbo"},
+            {"name": "volcano-qrd-pro-overlay.dtbo"},
+         ],
+     },
 }
 
 def _get_dtb_lists(target, dt_overlay_supported):

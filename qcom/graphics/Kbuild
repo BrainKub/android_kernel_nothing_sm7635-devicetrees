@@ -75,6 +75,10 @@ dtbo-y += gpu/cliffs-gpu.dtbo \
 		gpu/cliffs7-gpu.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_VOLCANO), y)
+dtbo-y += gpu/volcano-gpu.dtbo
+endif
+
 always-y    := $(dtb-y) $(dtbo-y)
 subdir-y    := $(dts-dirs)
 clean-files    := *.dtb *.dtbo

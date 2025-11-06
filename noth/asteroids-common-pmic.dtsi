@@ -18,7 +18,7 @@
 &pmk8550_vadc {
 	pinctrl-0 = <&charger_skin_therm_default &sys_therm_6_gpio7_default &volt_detect_gpio1_default>;
 
-	pmiv0104_bat_therm {
+	pmiv0104_sys_therm_7 {
 		reg = <PMIV0104_ADC5_GEN3_AMUX_THM1_BATT_THERM_30K_PU>;
 		qcom,scale-fn-type = <ADC_NOTHING_SCALE_HW_BATT_THERM_30K>;
 	};
@@ -71,6 +71,12 @@
 		compatible = "qcom,volt_detect";
 		io-channels = <&pmk8550_vadc PMXR2230_ADC5_GEN3_AMUX2_GPIO4_100K_PU>;
 		io-channel-names = "gpio4_voltage";
+	};
+};
+
+&thermal_zones {
+	sys-therm-7 {
+		thermal-sensors = <&pmk8550_vadc PMIV0104_ADC5_GEN3_AMUX_THM1_BATT_THERM_30K_PU>;
 	};
 };
 
